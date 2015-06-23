@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "LinkedList.h"
+#include "Node.h"
 
 
 class ofApp : public ofBaseApp{
