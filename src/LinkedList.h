@@ -11,6 +11,7 @@ public:
 	int size();
 	void output();
 	void clear();
+	void change_at(int index, int x, int y);
 	~LinkedList();
 	int getX_at(int index);
 	int getY_at(int index);

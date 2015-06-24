@@ -89,13 +89,19 @@ LinkedList::~LinkedList()
 
 int LinkedList::getX_at(int index) {
 	Node *p = head;
-	if (empty() || index >= size() || index<0){
-		cout << "Error: Out of bounds, or the list might be empty." << endl;
+	if (index >= size() || index<0){
+		cout << "Error: Out of bounds." << endl;
+		return -1;
+	}
+	else if (empty()){
+		cout << "Error: Empty List" << endl;
 		return -1;
 	}
 	else{
-		for (int i = 0; i < index; i++){
+		int i = 0;
+		while (i < index){
 			p = p->getNext();
+			i++;
 		}
 		//cout << "Data at " << index << ": " << p->getData() << endl;
 		int PosX = p->getPosX();
@@ -105,13 +111,19 @@ int LinkedList::getX_at(int index) {
 }
 int LinkedList::getY_at(int index) {
 	Node *p = head;
-	if (empty() || index >= size() || index<0){
-		cout << "Error: Out of bounds, or the list might be empty." << endl;
+	if (index >= size() || index < 0){
+		cout << "Error: Out of bounds." << endl;
+		return -1;
+	}
+	else if (empty()){
+		cout << "Error: Empty List" << endl;
 		return -1;
 	}
 	else{
-		for (int i = 0; i < index; i++){
+		int i = 0;
+		while (i < index){
 			p = p->getNext();
+			i++;
 		}
 		//cout << "Data at " << index << ": " << p->getData() << endl;
 		int PosY = p->getPosY();
@@ -119,18 +131,26 @@ int LinkedList::getY_at(int index) {
 		return PosY;
 	}
 }
-/*	void insert_at(int index, int data){
-Node *p = head;
-int s = size();
-if (index < s && s >= 0){
-for (int i = 0; i < index; i++){
-p = p->getNext();
-}
-p->setData(data);
-}
-p = nullptr;
-}
-
+	void LinkedList::change_at(int index, int x, int y){
+		Node *p = head;
+		if (index >= size() || index < 0){
+			cout << "Error: Out of bounds." << endl;
+		}
+		else if (empty()){
+			cout << "Error: Empty List" << endl;
+		}
+		else{
+			int i = 0;
+			while (i < index){
+				p = p->getNext();
+				i++;
+			}
+			p->setPosX(x);
+			p->setPosY(y);
+		}
+		p = nullptr;
+	}
+/*
 void delete_at(int index){
 if (empty() || index <= 0 || index >= size()) {
 cout << "Error: Out of bounds, or the list might be empty." << endl;

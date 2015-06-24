@@ -12,8 +12,8 @@ using namespace std;
 	}
 	Node::Node(int x, int y)
 	{
-		this->PosX = PosX;
-		this->PosY = PosY;
+		this->PosX = x;
+		this->PosY = y;
 		next = NULL;
 	}
 	/*--------------------------------------------//
