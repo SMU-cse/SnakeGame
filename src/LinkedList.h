@@ -15,4 +15,6 @@ public:
 	~LinkedList();
 	int getX_at(int index);
 	int getY_at(int index);
+	int getLastX();
+	int getLastY();
 };

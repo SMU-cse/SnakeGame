@@ -13,6 +13,17 @@ class ofApp : public ofBaseApp{
 		int sb = 20; //20px Space Between each line
 		int dirX[4];
 		int dirY[4];
+		int moveDir;
+		LinkedList Snake;
+		int appleX;
+		int appleY;
+		int lastX;
+		int lastY;
+		bool eaten;
+		bool gameover;
+
+
+		int framecount;
 
 		void setup();
 		void update();
@@ -20,7 +31,7 @@ class ofApp : public ofBaseApp{
 
 		void keyPressed(int key);
 		void keyReleased(int key);
-		void mouseMoved(int x, int y );
+		void mouseMoved(int x, int y);
 		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);

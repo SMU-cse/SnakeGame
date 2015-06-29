@@ -131,25 +131,49 @@ int LinkedList::getY_at(int index) {
 		return PosY;
 	}
 }
-	void LinkedList::change_at(int index, int x, int y){
-		Node *p = head;
-		if (index >= size() || index < 0){
-			cout << "Error: Out of bounds." << endl;
-		}
-		else if (empty()){
-			cout << "Error: Empty List" << endl;
-		}
-		else{
-			int i = 0;
-			while (i < index){
-				p = p->getNext();
-				i++;
-			}
-			p->setPosX(x);
-			p->setPosY(y);
-		}
-		p = nullptr;
+void LinkedList::change_at(int index, int x, int y){
+	Node *p = head;
+	if (index >= size() || index < 0){
+		cout << "Error: Out of bounds." << endl;
 	}
+	else if (empty()){
+		cout << "Error: Empty List" << endl;
+	}
+	else{
+		int i = 0;
+		while (i < index){
+			p = p->getNext();
+			i++;
+		}
+		p->setPosX(x);
+		p->setPosY(y);
+	}
+	p = nullptr;
+}
+int LinkedList::getLastX(){
+	Node *p = head;
+	if (empty())
+		return -1;
+	else{
+		while (p->getNext() != NULL){
+			p = p->getNext();
+		}
+		return p->getPosX();
+	}
+	p = nullptr;
+}
+int LinkedList::getLastY(){
+	Node *p = head;
+	if (empty())
+		return -1;
+	else{
+		while (p->getNext() != NULL){
+			p = p->getNext();
+		}
+		return p->getPosY();
+	}
+	p = nullptr;
+}
 /*
 void delete_at(int index){
 if (empty() || index <= 0 || index >= size()) {
